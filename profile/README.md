@@ -8,8 +8,8 @@
 <h3>Define the unknown. Change with confidence.</h3>
 
 <p>
-Legacy embedded code hides its intent, timing tricks and hardware workarounds.<br>
-<b>undefined</b> finds them, explains them, and links each one to the line and commit behind it.
+Turn unknown legacy code into a system you can change with confidence.<br>
+<b>undefined</b> uncovers hidden intent, timing assumptions and hardware workarounds, cited to the line.
 </p>
 
 <p>
@@ -65,48 +65,14 @@ One scan runs five stages, then everything in the app reads from the model they 
 
 | Stage              | What it does                                                                                                                                               |
 | ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **0 · Acquire**    | Blobless clone, batch-fetched blobs, inventory of the tree                                                                                                 |
-| **1 · Structure**  | Our own syntax-level C/C++ scanner: symbols, call and reference edges                                                                                      |
-| **2 · Git mining** | Commits, blame, co-change and authors, down to the history of single lines                                                                                 |
-| **3 · Signals**    | Interrupt handlers, hardware registers, bus I/O, timing constants, watchdogs and workaround comments, rolled into a criticality score that explains itself |
-| **4 · Components** | Directories plus Louvain communities over the graph                                                                                                        |
+| **Acquire**    | Blobless clone, batch-fetched blobs, inventory of the tree                                                                                                 |
+| **Structure**  | Our own syntax-level C/C++ scanner: symbols, call and reference edges                                                                                      |
+| **Git mining** | Commits, blame, co-change and authors, down to the history of single lines                                                                                 |
+| **Signals**    | Interrupt handlers, hardware registers, bus I/O, timing constants, watchdogs and workaround comments, rolled into a criticality score that explains itself |
+| **Components** | Directories plus Louvain communities over the graph                                                                                                        |
 
 The deterministic core needs no model. An LLM (any OpenAI-compatible endpoint) only adds chat, the
 review rationale and the generated overview, and a validator downgrades any claim it cannot back up.
-
-## Try it
-
-```sh
-npm install
-cp .env.example .env   # GitHub OAuth app, BETTER_AUTH_SECRET, optional LLM_BASE_URL / LLM_API_KEY
-npm run db:push        # create or update the tables in local.db (confirm the prompt)
-npm run dev            # http://localhost:5173
-```
-
-The GitHub OAuth app needs the callback `<ORIGIN>/api/auth/callback/github`.
-
-**Demo.** Sign in, open **New scan**, pick **Try the ArduPilot IMU drivers** and start the scan
-(about 20 s). Then open the system's pull requests, or **Reviews**, and review
-`ArduPilot/ardupilot` PR **#21937**. It was merged in real life and reverted ten days later for bad
-IMU data. undefined gives it **Stop** and cites the 2016 commit that introduced the check it breaks.
-
-## Stack
-
-SvelteKit 2, Svelte 5, TypeScript, Tailwind v4 and shadcn-svelte (Mira, stone, IBM Plex) ·
-Better Auth (GitHub) · Drizzle on SQLite · graphology + Louvain · 3d-force-graph · `git` CLI ·
-OpenAI SDK against a Gonka broker · Vitest and Playwright.
-
-## Docs
-
-|                                      |                                                    |
-| ------------------------------------ | -------------------------------------------------- |
-| [`AGENTS.md`](AGENTS.md)             | Every script, the scan rules and the folder layout |
-| [`docs/status.md`](docs/status.md)   | What's built, measured numbers, known limits, TODO |
-| [`docs/plan.md`](docs/plan.md)       | Product scope                                      |
-| [`docs/ui-spec.md`](docs/ui-spec.md) | Design system and every screen                     |
-| [`docs/demo.md`](docs/demo.md)       | The pitch                                          |
-
-<br>
 
 <div align="center">
 <sub>Built at Gothenburg Tech Week × Chalmers Hackathon 2026, for Saab's challenge:<br><i>How might we use AI to understand legacy embedded systems?</i></sub>

@@ -13,7 +13,8 @@ Turn unknown legacy code into a system you can change with confidence.<br>
 </p>
 
 <p>
-<img alt="Chalmers Hackathon 2026, Saab track" src="https://img.shields.io/badge/Chalmers%20Hackathon%202026-Saab%20track-79716b?style=flat-square&labelColor=e7e5e4">
+<a href="https://builderbase.com/event/gothenburg-tech-week-x-chalmers-hackathon"><img alt="Gothenburg Tech Week x Chalmers Hackathon 2026" src="https://img.shields.io/badge/Chalmers%20Hackathon-2026-79716b?style=flat-square&labelColor=e7e5e4"></a>
+<a href="https://www.saab.com/"><img alt="Saab track" src="https://img.shields.io/badge/Saab-track-79716b?style=flat-square&labelColor=e7e5e4"></a>
 </p>
 
 <br>
@@ -75,5 +76,5 @@ The deterministic core needs no model. An LLM (any OpenAI-compatible endpoint) o
 review rationale and the generated overview, and a validator downgrades any claim it cannot back up.
 
 <div align="center">
-<sub>Built at Gothenburg Tech Week × Chalmers Hackathon 2026, for Saab's challenge:<br><i>How might we use AI to understand legacy embedded systems?</i></sub>
+<sub>Built at <a href="https://builderbase.com/event/gothenburg-tech-week-x-chalmers-hackathon">Gothenburg Tech Week × Chalmers Hackathon 2026</a>, for <a href="https://www.saab.com/">Saab</a>'s challenge:<br><i>How might we use AI to understand legacy embedded systems?</i></sub>
 </div>
